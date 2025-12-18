@@ -12,5 +12,8 @@ pip install -r requirements.txt
 pip install pip-tools
 pip-compile requirements.in
 
+## Start the docker container
+docker-compose up -d
+
 ## Run the app
 python -m uvicorn app.main:app --reload
