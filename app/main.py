@@ -1,7 +1,16 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from app.db.session import Base, engine
 from app.core.config import settings
 
-app = FastAPI(title="Job Service")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup code
+    Base.metadata.create_all(bind=engine)
+    yield
+    # Teardown code
+
+app = FastAPI(title=settings.app_name, lifespan=lifespan)
 
 @app.get("/health")
 def health():
