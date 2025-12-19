@@ -1,7 +1,9 @@
 alembic
+bcrypt
 fastapi
-uvicorn
-sqlalchemy
+psycopg2-binary
 pydantic-settings
 python-dotenv
-psycopg2-binary
+PyJWT
+sqlalchemy
+uvicorn

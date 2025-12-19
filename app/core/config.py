@@ -3,6 +3,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     app_name: str = "Job Service"
     jwt_secret: str
+    encoding_algorithm: str
+    access_token_expire_minutes: int
     database_url: str
 
     model_config = SettingsConfigDict(
