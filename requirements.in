@@ -3,6 +3,7 @@ bcrypt
 fastapi
 psycopg2-binary
 pydantic-settings
+pydantic[email]
 python-dotenv
 PyJWT
 sqlalchemy
